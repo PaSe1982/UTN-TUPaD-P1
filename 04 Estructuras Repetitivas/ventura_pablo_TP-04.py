@@ -133,3 +133,4 @@ usuario. Ejemplo: si el usuario ingresa 547, el programa debe mostrar 745."""
 #         numero_invertido = numero_invertido * 10 + digito    # lo agrego al invertido
 #         num = num // 10                                      # le saco el último dígito
 # print(f"El número invertido es: {numero_invertido}")        # PD: la verdad no sabia como hacerlo
+
