@@ -71,6 +71,8 @@ def producto_cartesiano(anios, edades):
     """
     return [(anio, edad) for anio in anios for edad in edades]
 
+# -- PROGRAMA PRINCIPAL -- #
+
 # Años de nacimiento por defecto:
 anios_defecto = [1993, 1999, 1982, 1988]
 

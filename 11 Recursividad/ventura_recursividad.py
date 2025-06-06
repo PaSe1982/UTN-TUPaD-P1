@@ -189,7 +189,7 @@ contar_digito(12233421, 2) → 3
 contar_digito(5555, 5) → 4 
 contar_digito(123456, 7) → 0
 """
-
+"""
 
 # Defino una función recursiva para contar cuántas veces aparece un dígito dentro de un número
 def contar_digito(numero, digito):
@@ -210,4 +210,6 @@ print(contar_digito(12233421, 1))  # 2
 print(contar_digito(5555223, 3))   # 1
 print(contar_digito(123456, 8))    # 0
 
+
+"""
 #----------------------------------------------------------------------------------
