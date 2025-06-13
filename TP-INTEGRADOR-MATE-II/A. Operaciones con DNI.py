@@ -6,9 +6,6 @@ def ingresarDNIs():
     Return:
         dniA, dniB, dniC, dniD (str): Retorna 4 cadenas de texto con los N° de DNI.
     """
-    ###
-    ### AGREGAR VALIDACIONES ###
-    ###
 
     dniA = input("Ingrese el primer DNI: ")
     dniB = input("Ingrese el segundo DNI: ")
@@ -137,7 +134,6 @@ print(f"Diferencia B - A: {diferencia_BA}")
 diferencia_simetrica_AB = sorted(list(set(conjA) ^ set(conjB)))
 print(f"Diferencia simétrica A ^ B: {diferencia_simetrica_AB}")
 
-# You can add more differences and symmetric differences as needed, e.g., A-C, C-A, A^C, etc.
 
 ### - Conteo de frecuencia de cada dígito en cada DNI utilizando estructuras repetitivas. - ###
 print("\nFrecuencia de dígitos en cada DNI:")
@@ -152,8 +148,6 @@ print(f"DNI C ({dniC}): {frecuenciaC}")
 
 frecuenciaD = contar_frecuencia_digitos(dniD)
 print(f"DNI D ({dniD}): {frecuenciaD}")
-
-
 
 # Suma total de los dígitos de cada DNI.
 print("\nSuma total de los dígitos de cada DNI:")
@@ -170,10 +164,11 @@ sumaD = sumar_digitos_dni(dniD)
 print(f"Suma de los dígitos del DNI D ({dniD}): {sumaD}")
 
 
-# prompt:  Evaluación de condiciones lógicas (condicionales), vinculadas con las expresiones escritas.
+# Evaluación de condiciones lógicas (condicionales), vinculadas con las expresiones escritas.
 # Ejemplos:
-# ·         Si un dígito aparece en todos los conjuntos, mostrar "Dígito compartido".
-# ·         Si algún conjunto tiene más de 6 elementos, mostrar "Diversidad numérica alta".
+# Si un dígito aparece en todos los conjuntos, mostrar "Dígito compartido".
+# Si algún conjunto tiene más de 6 elementos, mostrar "Diversidad numérica alta".
+
 
 ### - Evaluación de condiciones lógicas (condicionales) - ###
 
@@ -187,4 +182,4 @@ else:
 if len(conjA) > 6 or len(conjB) > 6 or len(conjC) > 6 or len(conjD) > 6:
   print("Diversidad numérica alta en al menos un conjunto.")
 else:
-  print("La diversidad numérica en los conjuntos no es alta.")
+  print("La diversidad numérica en los conjuntos no es alta.\n")
