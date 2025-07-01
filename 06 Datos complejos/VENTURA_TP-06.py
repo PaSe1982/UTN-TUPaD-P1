@@ -138,7 +138,7 @@ print("Recuento:", recuento)
 """ 6) Permití ingresar los nombres de 3 alumnos, y para cada uno una tupla de 3 notas.
 Luego, mostrá el promedio de cada alumno.
 """
-
+"""
 # Creamos un diccionario para guardar los alumnos y sus notas
 alumnos = {}
 # Repetimos 3 veces para cargar los datos de cada alumno
@@ -159,4 +159,132 @@ for nombre in alumnos:
     promedio = sum(notas) / 3
     print(nombre, "->", promedio)
 
+    """
 #--------------------------------------------------------------------------------------------------------------------------
+""" 7) Dado dos sets de números, representando dos listas de estudiantes que aprobaron Parcial 1
+y Parcial 2:
+• Mostrá los que aprobaron ambos parciales.
+• Mostrá los que aprobaron solo uno de los dos.
+• Mostrá la lista total de estudiantes que aprobaron al menos un parcial (sin repetir).
+"""
+"""
+# Lista de estudiantes que aprobaron cada parcial
+parcial1 = {"Ana", "Juan", "Lucía", "Martín", "Sofía"}
+parcial2 = {"Lucía", "Pedro", "Sofía", "Marcos", "Camila"}
+
+# 1) Los que aprobaron ambos parciales (intersección)
+ambos = parcial1 & parcial2
+print("Aprobaron los dos parciales:", ambos)
+
+# 2) Los que aprobaron solo uno de los dos (diferencia simétrica)
+solo_uno = parcial1 ^ parcial2
+print("Aprobaron solo uno de los dos:", solo_uno)
+
+# 3) Todos los que aprobaron al menos un parcial (unión, sin repetir)
+todos = parcial1 | parcial2
+print("Aprobaron al menos un parcial:", todos)
+"""
+#--------------------------------------------------------------------------------------------------------------------------
+
+""" 8) Armá un diccionario donde las claves sean nombres de productos y los valores su stock.
+Permití al usuario:
+• Consultar el stock de un producto ingresado.
+• Agregar unidades al stock si el producto ya existe.
+• Agregar un nuevo producto si no existe.
+"""
+"""
+# Diccionario con productos y su stock
+stock = {
+    "lapicera": 10,
+    "cuaderno": 5,
+    "lapicera": 8
+}
+
+# Le pedimos al usuario que ingrese un producto que quiera agregar o consultar
+producto = input("¿Qué producto querés consultar o agregar? ").lower()
+
+# Si el producto ya existe
+if producto in stock:
+    print(f"Hay {stock[producto]} unidades de '{producto}' en stock.")
+    
+    # Le preguntamos si quiere agregrr más unidades
+    opcion = input("¿Querés agregar unidades? (si/no): ").lower()
+    if opcion == "si":
+        unidades = int(input("¿Cuántas unidades querés agregar?: "))
+        stock[producto] += unidades
+        print(f"Ahora hay {stock[producto]} unidades de '{producto}'.")
+    else:
+        print("OK, no se modificó el stock.")
+else:
+    # Si el producto no está, lo agregamos
+    print(f"'{producto}' no está en el stock.")
+    agregar = input("¿Querés agregar este nuevo producto? (sí/no): ").lower()
+    if agregar == "si":
+        unidades = int(input("¿Cuántas unidades querés agregar?: "))
+        stock[producto] = unidades
+        print(f"Producto '{producto}' agregado con {unidades} unidades.")
+    else:
+        print("OK, no se agregó el producto.")
+
+# Mostramos el stock final
+print("\nStock actualizado:")
+for prod, cant in stock.items():
+    print(f"{prod}: {cant} unidades")
+
+"""
+#--------------------------------------------------------------------------------------------------------------------------
+
+""" 9) Creá una agenda donde las claves sean tuplas de (día, hora) y los valores sean eventos.
+Ejemplo:
+Permití consultar qué actividad hay en cierto día y hora.
+"""
+"""
+# Agenda con actividades
+agenda = {
+    ("lunes", "10:00"): "Consulta médica de Silvina",
+    ("martes", "15:30"): "Clases de Programación en la UTN",
+    ("miercoles", "12:00"): "Gym", 
+    ("viernes", "19:00"): "Editar video del TP con Nicolás"
+    }
+
+# Le pedimos al usuario el día y la hora que quiere consultar
+dia = input("¿Qué día querés consultar?: ").lower()
+hora = input("¿A qué hora?: ")
+
+# Creamos la tupla con esos datos
+clave = (dia, hora)
+
+# Consultamos si esa clave existe en la agenda
+if clave in agenda:
+    print(f"A esa hora tenés: {agenda[clave]}")
+else:
+    print("No hay ninguna actividad agendada en ese horario.")
+
+"""
+#--------------------------------------------------------------------------------------------------------------------------
+"""
+10) Dado un diccionario que mapea nombres de países con sus capitales, construí un nuevo
+diccionario donde:
+• Las capitales sean las claves.
+• Los países sean los valores.
+"""
+
+"""
+# Diccionario original: país → capital
+original = {
+    "Argentina": "Buenos Aires",
+    "Chile": "Santiago",
+    "Uruguay": "Montevideo"
+}
+
+# Diccionario invertido: capital → país
+invertido = {}
+
+for pais, capital in original.items():
+    invertido[capital] = pais
+
+# Mostramos el resultado
+print("Dicccionario invertido:")
+print(invertido)
+
+"""
